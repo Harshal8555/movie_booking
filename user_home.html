@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Home</title>
+    <link rel="stylesheet" href="/static/user_home.css">
+</head>
+<body>
+
+<div class="navbar">
+    <h2>🎬 MovieBook</h2>
+    <div>
+        Welcome {{ session['user'] }}
+        <a href="/logout">Logout</a>
+    </div>
+</div>
+
+<div class="movies">
+    {% for m in movies %}
+    <div class="card">
+        <img src="https://via.placeholder.com/250x300">
+        <h3>{{ m.title }}</h3>
+        <p>{{ m.description }}</p>
+        <p class="price">₹{{ m.price }}</p>
+        <button>Book Now</button>
+    </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>
